@@ -10,11 +10,11 @@ Oficient::Oficient(int numGuests)
 
 void Oficient::Serving()
 {
-   forks.reserve(numGuests); //Резервируем место в память под вилки
+   forks.reserve(numGuests);
    for (int i = 0; i < numGuests; i++)
    {
-       Forks *temp = new Forks(i);; //Создаем временный указатель на вилку, которой передаем индекс i
-       forks.push_back(temp); // Добавляем новую вилку в конец вектора
+       Forks *temp = new Forks(i);;
+       forks.push_back(temp);
    }
 }
 
@@ -22,11 +22,11 @@ void Oficient::Serving()
 void Oficient::CreateListGuests()
 {
 
-    phy.reserve(numGuests); //Резервируем место в памяти под гостей
+    phy.reserve(numGuests);
     for(int i = 0; i < numGuests; i++)
     {
-        Phy *temp = new Phy(forks,i,numGuests); // Создаем временный указатель на философа и передаем ему в конструктор три параметра)
-        phy.push_back(temp);//Добавляем нового филосова в конец вектора
+        Phy *temp = new Phy(forks,i,numGuests);
+        phy.push_back(temp);
     }
 }
 
@@ -43,8 +43,8 @@ void Oficient::OpenRestaurant()
 void Oficient::ClosedRestaurant()
 {
 
-    int str = cin.get(); // Ждем ввода с клавиатуры
-    while (str!=9999) // Если введенная комбинация 9999, то программа останавливается
+    int str = cin.get();
+    while (str!=9999)
     {
             exit(0);
     }
